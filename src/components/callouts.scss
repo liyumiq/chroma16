@@ -1,0 +1,213 @@
+// Blockquotes ------------------------------------------------------
+// Base
+.ss-callout-style-block,
+.ss-callout-style-frame,
+.ss-callout-style-vanilla {
+  .markdown-preview-view blockquote {
+    padding: 8px 8px 8px 12px;
+    border-radius: var(--radius-s);
+  }
+}
+
+// Block Style
+.ss-callout-style-block {
+  .markdown-preview-view blockquote {
+    border-left: 4px solid var(--interactive-accent);
+    background-color: var(--background-secondary)
+  }
+  .markdown-preview-view blockquote code:not(.mb-input) {
+    border: 1px solid var(--background-modifier-border);
+  }
+}
+
+// Vanilla Style
+.ss-callout-style-vanilla {
+  .markdown-preview-view blockquote {
+    padding: 8px 8px 8px 15px;
+    position: relative;
+    border: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: var(--radius-s);
+      background-color: var(--interactive-accent);
+    }
+  }
+}
+
+
+// Base Styling -------------------------------------------------------
+.ss-callout-style-block,
+.ss-callout-style-vanilla {
+  // Block
+  .callout {
+    padding: 0;
+    --callout-blend-mode: normal;
+  }
+
+  // Title
+  .callout-title {
+    padding: 8px 8px 8px 12px;
+  }
+  .callout-title-inner {
+    flex-grow: 1;
+  }
+
+  // Content
+  .callout-content {
+    padding: 8px 8px 8px 12px;
+  }
+  .callout-content > p {
+    margin: 0 0 13px 0;
+  }
+  .callout-content > p:last-child {
+    margin: 0;
+  }
+  .callout-content > ul {
+    margin: 0;
+  }
+}
+
+
+// Block Style ------------------------------------------------------
+.ss-callout-style-block {
+  // Block
+  .callout {
+    background: transparent;
+    border-left: 4px solid rgb(var(--callout-color));
+  }
+  .callout code:not(.mb-input) {
+    border: 1px solid var(--background-modifier-border);
+  }
+
+  // Title
+  .callout-title {
+    background: rgba(var(--callout-color), 0.1);
+  }
+  .callout.is-collapsed .callout-title,
+  .callout:has(.callout-content:empty) .callout-title,
+  .callout .callout-title:last-child {
+    border-bottom: none !important;
+  }
+
+  // Content
+  .callout-content {
+    background: var(--background-secondary);
+  }
+}
+
+
+// Functions --------------------------------------------------------
+// Hide Icon
+.callout[data-callout-metadata~="no-icon"] > .callout-title > .callout-icon {
+    display: none !important;
+}
+
+// Center Title
+.callout[data-callout-metadata~="center"] .callout-title-inner {
+  text-align: center;
+}
+
+// Hide Border
+.callout[data-callout-metadata~="borderless"] {
+  border: none;
+}
+
+// Spoiler
+.callout[data-callout="spoiler"],
+.callout[data-callout-metadata~="spoiler"] {
+  .callout-content p,
+  .callout-content li {
+    font-family: 'Flow Circular', sans-serif;
+    color: var(--text-muted); 
+  }
+
+  .callout-content {
+    user-select: none;
+  }
+
+  &:hover {
+    .callout-content p,
+    .callout-content li {
+      font-family: var(--font-text);
+      color: var(--text-normal);
+    }
+    
+    .callout-content {
+      user-select: auto;
+    }
+  }
+}
+
+// Cite
+cite {
+  color: var(--ss-callouts-cite-color, var(--text-muted));
+  text-align: end;
+  display: block;
+  padding-right: 4px;
+}
+
+// Changing Colors
+.callout[data-callout-metadata~="red"] { --callout-color: var(--color-red-rgb); }
+.callout[data-callout-metadata~="orange"] { --callout-color: var(--color-orange-rgb); }
+.callout[data-callout-metadata~="yellow"] { --callout-color: var(--color-yellow-rgb); }
+.callout[data-callout-metadata~="green"] { --callout-color: var(--color-green-rgb); }
+.callout[data-callout-metadata~="cyan"] { --callout-color: var(--color-cyan-rgb); }
+.callout[data-callout-metadata~="blue"] { --callout-color: var(--color-blue-rgb); }
+.callout[data-callout-metadata~="purple"] { --callout-color: var(--color-purple-rgb); }
+.callout[data-callout-metadata~="pink"] { --callout-color: var(--color-pink-rgb); }
+.callout[data-callout-metadata~="gray"] { --callout-color: var(--callout-quote); }
+.callout[data-callout-metadata~="black"] { --callout-color: var(--base04-rgb); }
+
+
+// Callout Types ----------------------------------------------------
+// Default
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] {
+    --callout-icon: notepad-text;
+}
+.callout[data-callout="todo"] {
+    --callout-icon: list-todo;
+}
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"] {
+    --callout-icon: circle-check;
+}
+.callout[data-callout="failure"],
+.callout[data-callout="fail"],
+.callout[data-callout="missing"] {
+    --callout-icon: circle-x;
+}
+.callout[data-callout="danger"],
+.callout[data-callout="error"] {
+    --callout-icon: circle-alert;
+}
+
+// Custom
+.callout[data-callout="pro"] {
+    --callout-color: var(--color-green-rgb);
+    --callout-icon: thumbs-up;
+}
+.callout[data-callout="con"] {
+    --callout-color: var(--color-red-rgb);
+    --callout-icon: thumbs-down;
+}
+.callout[data-callout="target"] {
+    --callout-color: var(--color-red-rgb);
+    --callout-icon: target;
+}
+.callout[data-callout="idea"] {
+    --callout-color: var(--color-orange-rgb);
+    --callout-icon: lightbulb;
+}
+.callout[data-callout="spoiler"] {
+  --callout-color: var(--base04-rgb); 
+  --callout-icon: eye;
+}

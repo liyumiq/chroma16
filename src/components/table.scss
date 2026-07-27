@@ -1,0 +1,54 @@
+// Base Styling -----------------------------------------------------
+// Table
+.markdown-rendered table {
+  margin: 0;
+  width: 100%;
+  border-radius: var(--radius-s);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden !important;
+  background-color: transparent;
+}
+
+.markdown-rendered table th,
+.markdown-rendered table td,
+.markdown-rendered table th.table-view-th,
+.markdown-rendered table td.table-view-td {
+  padding: 8px;
+  border: none;
+  font-size: var(--font-text-size);
+}
+
+// Header
+.markdown-rendered table thead th,
+.markdown-rendered table thead td,
+.markdown-rendered table tr:has(.tag[href="#hdr"]) td {
+  font-weight: 600;
+  color: var(--interactive-accent);
+  background-color: color-mix(in srgb, var(--interactive-accent) 10%, transparent) !important;
+}
+
+// Rows
+.markdown-rendered table tbody td {
+  background-color: var(--background-secondary) !important;
+}
+
+// Header-like Row
+.markdown-rendered table tbody tr:first-child:has(.tag[href="#hdr"]) td,
+.markdown-rendered table tr:has(.tag[href="#hdr"]) + tr:has(.tag[href="#hdr"]) td {
+  border-top: none !important;
+}
+
+.markdown-rendered table tr:last-child:has(.tag[href="#hdr"]) td {
+  border-bottom: none !important;
+}
+
+// Inline Code
+.markdown-rendered table code:not(.mb-input) {
+  border: 1px solid var(--background-modifier-border);
+}
+
+// Hide hdr Tag
+.markdown-rendered table tr td .tag[href="#hdr"] {
+    display: none !important;
+}

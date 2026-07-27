@@ -1,0 +1,52 @@
+// Fix Table Margin
+.markdown-rendered .block-language-dataviewjs > p:has(table) {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.block-language-dataview ul,
+.block-language-dataviewjs ul {
+    margin: 0;
+}
+
+
+// Empty Dataview & DataviewJS Block ---------------------------------------------
+.block-language-dataview:not(:has(li)):not(:has(tbody tr)),
+.block-language-dataviewjs:not(:has(li)):not(:has(tbody tr)) {
+  margin: 0 0 13px 0;
+  padding: 16px 8px 16px 8px;
+  border-radius: var(--radius-s);
+
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-secondary);
+}
+
+.block-language-dataview:not(:has(li)):not(:has(tbody tr)) > *,
+.block-language-dataviewjs:not(:has(li)):not(:has(tbody tr)) > * {
+  display: none;
+}
+
+// Empty Block Message
+.block-language-dataview:not(:has(li)):not(:has(tbody tr))::after,
+.block-language-dataviewjs:not(:has(li)):not(:has(tbody tr))::after {
+  content: "No Data";
+  font-size: var(--font-text-size);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+// Custom DataviewJS Message
+.dv-empty-message {
+  margin: 0 0 13px 0;
+  padding: 16px 8px 16px 8px;
+  border-radius: var(--radius-s);
+
+  display: flex;
+  justify-content: center;
+
+  font-size: var(--font-text-size);
+  font-style: italic;
+  color: var(--text-muted);
+  background-color: var(--background-secondary);
+}

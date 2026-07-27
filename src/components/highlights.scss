@@ -1,0 +1,19 @@
+mark.red { --color: var(--color-red); }
+mark.orange { --color: var(--color-orange); }
+mark.yellow { --color: var(--color-yellow); }
+mark.green { --color: var(--color-green); }
+mark.cyan { --color: var(--color-cyan); }
+mark.blue { --color: var(--color-blue); }
+mark.purple { --color: var(--color-purple); }
+mark.pink { --color: var(--color-pink); }
+
+span.cm-highlight,
+span.cm-formatting-highlight,
+.markdown-preview-view mark,
+.cm-line mark {
+  padding: 1px 4px;
+  box-decoration-break: clone;
+  border-radius: var(--radius-s);
+  color: var(--text-on-accent);
+  background-color: var(--color, var(--interactive-accent));
+}

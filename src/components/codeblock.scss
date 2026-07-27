@@ -1,0 +1,67 @@
+// Styling ----------------------------------------------------------
+// Display Language
+.markdown-rendered pre[class*="language-"]::before {
+  content: "CODE";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+// Hide Label On Hover
+.markdown-rendered pre[class*="language-"]:hover::before {
+  display: none;
+}
+
+// Languages --------------------------------------------------------
+.markdown-rendered pre[class~="language-js"]::before,
+.markdown-rendered pre[class~="language-javascript"]::before { content: "JS"; }
+
+.markdown-rendered pre[class~="language-ts"]::before,
+.markdown-rendered pre[class~="language-typescript"]::before { content: "TS"; }
+
+.markdown-rendered pre[class~="language-py"]::before,
+.markdown-rendered pre[class~="language-python"]::before { content: "Python"; }
+
+.markdown-rendered pre[class~="language-html"]::before { content: "HTML"; }
+
+.markdown-rendered pre[class~="language-css"]::before { content: "CSS"; }
+
+.markdown-rendered pre[class~="language-scss"]::before { content: "SCSS"; }
+
+.markdown-rendered pre[class~="language-json"]::before { content: "JSON"; }
+
+.markdown-rendered pre[class~="language-json5"]::before { content: "JSON5"; }
+
+.markdown-rendered pre[class~="language-bash"]::before,
+.markdown-rendered pre[class~="language-sh"]::before { content: "Bash"; }
+
+.markdown-rendered pre[class~="language-cpp"]::before { content: "C++"; }
+
+.markdown-rendered pre[class~="language-c"]::before { content: "C"; }
+
+.markdown-rendered pre[class~="language-cs"]::before,
+.markdown-rendered pre[class~="language-csharp"]::before { content: "C#"; }
+
+.markdown-rendered pre[class~="language-java"]::before { content: "Java"; }
+
+.markdown-rendered pre[class~="language-go"]::before { content: "Go"; }
+
+.markdown-rendered pre[class~="language-rust"]::before,
+.markdown-rendered pre[class~="language-rs"]::before { content: "Rust"; }
+
+.markdown-rendered pre[class~="language-php"]::before { content: "PHP"; }
+
+.markdown-rendered pre[class~="language-sql"]::before { content: "SQL"; }
+
+.markdown-rendered pre[class~="language-yaml"]::before,
+.markdown-rendered pre[class~="language-yml"]::before { content: "YAML"; }
+
+.markdown-rendered pre[class~="language-md"]::before,
+.markdown-rendered pre[class~="language-markdown"]::before { content: "Markdown"; }
+
+.markdown-rendered pre[class~="language-nix"]::before { content: "nix"; }

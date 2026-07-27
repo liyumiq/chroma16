@@ -1,0 +1,20 @@
+// Smaller Fields
+.mb-input-type-text input[type="text"],
+.mb-input-type-time input[type="time"],
+.mb-suggest-input {
+  padding: 2px 8px;
+  margin: 2px 0;
+  height: 26px;
+}
+
+.mb-input-type-text input[type="text"] {
+  position: relative;
+  top: 1px;
+}
+
+// Text Area Margin Fix
+.mb-input-type-textArea {
+  margin-left: -3px;
+  padding: 0;
+  border-radius: var(--radius-s);
+}

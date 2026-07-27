@@ -1,0 +1,70 @@
+@function hex-to-rgb($color) {
+  @return red($color), green($color), blue($color);
+}
+
+// Color Scheme Generator
+@mixin generate-scheme($theme-name, $mode, $colors-map, $is-default: false) {
+  $selector: "body.theme-#{$mode}-#{$theme-name}.theme-#{$mode}";
+  
+  #{$selector} {
+    @each $key, $color in $colors-map {
+      --#{$key}: #{$color};
+      --#{$key}-rgb: #{hex-to-rgb($color)};
+    }
+  }
+}
+
+// Checkbox Status Generator
+@mixin task-checkbox($status, $color, $icon, $mode: 'overlay', $text-color: null, $text-decor: null) {
+  
+  .task-list-item[data-task="#{$status}"] {
+    
+    @if $text-color { color: #{$text-color}; }
+    @if $text-decor { text-decoration: #{$text-decor}; }
+
+    input[type="checkbox"] {
+      
+      background-image: none !important;
+
+      @if $mode == 'overlay' {
+        background-color: #{$color};
+        border-color: #{$color};
+
+        &::after {
+          content: '';
+          position: absolute;
+          padding-right: 1px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 100%;
+          background-color: var(--base01);
+          -webkit-mask-image: #{$icon};
+          -webkit-mask-size: contain;
+          -webkit-mask-position: center;
+          -webkit-mask-repeat: no-repeat;
+        }
+      } 
+      
+      @else if $mode == 'replace' {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          top: -3px;
+          left: -2px;
+          width: calc(100% + 4px);
+          height: calc(100% + 4px);
+          background-color: #{$color};
+          -webkit-mask-image: #{$icon};
+          -webkit-mask-size: contain;
+          -webkit-mask-position: center;
+          -webkit-mask-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}

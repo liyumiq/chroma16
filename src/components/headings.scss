@@ -1,0 +1,56 @@
+// Heading Colors
+.ss-headings-style-border,
+.ss-headings-style-accent {
+  --h1-color: var(--interactive-accent);
+  --h2-color: var(--interactive-accent);
+  --h3-color: var(--interactive-accent);
+  --h4-color: var(--interactive-accent);
+  --h5-color: var(--interactive-accent);
+  --h6-color: var(--interactive-accent);
+}
+.ss-headings-style-colorful {
+  --h1-color: var(--color-red);
+  --h2-color: var(--color-orange);
+  --h3-color: var(--color-yellow);
+  --h4-color: var(--color-green);
+  --h5-color: var(--color-cyan);
+  --h6-color: var(--color-blue);
+}
+
+
+.ss-headings-style-border {
+  // Left Margin
+  .markdown-preview-view h1, .cm-line.HyperMD-header-1,
+  .markdown-preview-view h2, .cm-line.HyperMD-header-2,
+  .markdown-preview-view h3, .cm-line.HyperMD-header-3,
+  .markdown-preview-view h4, .cm-line.HyperMD-header-4,
+  .markdown-preview-view h5, .cm-line.HyperMD-header-5,
+  .markdown-preview-view h6, .cm-line.HyperMD-header-6 {
+      position: relative;
+      padding-left: 12px;
+  }
+
+  // Vertical Line
+  .markdown-preview-view h1::before, .cm-line.HyperMD-header-1::before,
+  .markdown-preview-view h2::before, .cm-line.HyperMD-header-2::before,
+  .markdown-preview-view h3::before, .cm-line.HyperMD-header-3::before,
+  .markdown-preview-view h4::before, .cm-line.HyperMD-header-4::before,
+  .markdown-preview-view h5::before, .cm-line.HyperMD-header-5::before,
+  .markdown-preview-view h6::before, .cm-line.HyperMD-header-6::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: var(--radius-s);
+  }
+
+  // Colors
+  .markdown-preview-view h1::before, .cm-line.HyperMD-header-1::before { background-color: var(--color-red); }
+  .markdown-preview-view h2::before, .cm-line.HyperMD-header-2::before { background-color: var(--color-orange); }
+  .markdown-preview-view h3::before, .cm-line.HyperMD-header-3::before { background-color: var(--color-yellow); }
+  .markdown-preview-view h4::before, .cm-line.HyperMD-header-4::before { background-color: var(--color-green); }
+  .markdown-preview-view h5::before, .cm-line.HyperMD-header-5::before { background-color: var(--color-cyan); }
+  .markdown-preview-view h6::before, .cm-line.HyperMD-header-6::before { background-color: var(--color-blue); }
+}

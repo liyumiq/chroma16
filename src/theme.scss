@@ -1,0 +1,491 @@
+/* @settings
+name: Chroma16
+id: my-base16-theme
+settings:
+  - id: theme-group
+    title: Colorscheme
+    type: heading
+    level: 1
+
+  - id: theme-preset-light
+    title: Light Color Scheme
+    description: Choose one of the pre-installed schemes for light theme
+    type: class-select
+    allowEmpty: false
+    default: theme-light-catppuccin-latte
+    options:
+      - label: Ayu Light
+        value: theme-light-ayu-light
+      - label: Catppuccin Latte
+        value: theme-light-catppuccin-latte
+      - label: Everforest
+        value: theme-light-everforest
+
+  - id: theme-preset-dark
+    title: Dark Color Scheme
+    description: Choose one of the pre-installed schemes for dark theme
+    type: class-select
+    allowEmpty: false
+    default: theme-dark-catppuccin-mocha
+    options:
+      - label: Ayu Dark
+        value: theme-dark-ayu-dark
+      - label: Ayu Mirage
+        value: theme-dark-ayu-mirage
+      - label: Catppuccin Mocha
+        value: theme-dark-catppuccin-mocha
+      - label: Catppuccin Macchiato
+        value: theme-dark-catppuccin-macchiato
+      - label: Catppuccin Frappe
+        value: theme-dark-catppuccin-frappe
+      - label: Everforest
+        value: theme-dark-everforest
+
+  - id: ss-theme-accent-color
+    title: Accent Color
+    type: variable-select
+    default: var(--base0D)
+    options:
+      - label: Red
+        value: var(--base08)
+      - label: Orange
+        value: var(--base09)
+      - label: Yellow
+        value: var(--base0A)
+      - label: Green
+        value: var(--base0B)
+      - label: Cyan
+        value: var(--base0C)
+      - label: Blue
+        value: var(--base0D)
+      - label: Purple
+        value: var(--base0E)
+      - label: Pink
+        value: var(--base0F)
+
+  - id: custom-colors-group
+    title: Custom Colors
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: base00
+    title: Base00
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base00-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base01
+    title: Base01
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base01-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base02
+    title: Base02
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base02-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base03
+    title: Base03
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base03-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base04
+    title: Base04
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base04-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base05
+    title: Base05
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base05-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base06
+    title: Base06
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base06-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base07
+    title: Base07
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base07-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base08
+    title: Base08 (Red)
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base08-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base09
+    title: Base09 (Orange)
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base09-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base0A
+    title: Base0A (Yellow)
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base0A-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base0B
+    title: Base0B (Green)
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base0B-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base0C
+    title: Base0C (Cyan)
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base0C-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base0D
+    title: Base0D (Blue)
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base0D-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base0E
+    title: Base0E (Purple)
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base0E-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: base0F
+    title: Base0F (Pink)
+    type: variable-themed-color
+    format: hex
+    alt-format:
+      - id: base0F-rgb
+        format: rgb-values
+    default-light: '#ffffff'
+    default-dark: '#ffffff'
+
+  - id: markdown-group
+    title: Markdown
+    type: heading
+    collapsed: true
+    level: 1
+
+  - id: callouts-group
+    title: Blockquotes & Callouts
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: callouts-style
+    title: Style
+    type: class-select
+    allowEmpty: false
+    default: ss-callout-style-block
+    options:
+      - label: Block
+        value: ss-callout-style-block
+      - label: Vanilla
+        value: ss-callout-style-vanilla
+      - label: Default
+        value: ss-callout-style-default
+
+  - id: ss-callouts-cite-color
+    title: Cite Color
+    description: Text color of <cite> elements inside callouts
+    type: variable-select
+    default: var(--text-muted)
+    options:
+      - label: Muted
+        value: var(--text-muted)
+      - label: Accent
+        value: var(--text-accent)
+
+  - id: headings-group
+    title: Headings
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: headings-style
+    title: Style
+    type: class-select
+    allowEmpty: false
+    default: ss-headings-style-accent
+    options:
+      - label: Accent
+        value: ss-headings-style-accent
+      - label: Colorful
+        value: ss-headings-style-colorful
+      - label: Border
+        value: ss-headings-style-border
+
+  - id: hr-group
+    title: Horizontal Rule
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: ss-hr-show-icon
+    title: Show Icon
+    description: Displays an icon in the center of the horizontal divider
+    type: class-toggle
+    default: true
+
+  - id: ss-hr-icon-preset
+    title: Icon Preset
+    description: Choose a default icon for the horizontal divider
+    type: class-select
+    allowEmpty: false
+    default: ss-hr-icon-star
+    options:
+      - label: Star
+        value: ss-hr-icon-star
+      - label: Star (FA)
+        value: ss-hr-icon-star-fa
+      - label: Moon
+        value: ss-hr-icon-moon
+      - label: Moon (FA)
+        value: ss-hr-icon-moon-fa
+      - label: Heart
+        value: ss-hr-icon-heart
+      - label: Heart (FA)
+        value: ss-hr-icon-heart-fa
+      - label: Leaf
+        value: ss-hr-icon-leaf
+      - label: Leaf (FA)
+        value: ss-hr-icon-leaf-fa
+      - label: Book
+        value: ss-hr-icon-book
+      - label: Book (FA)
+        value: ss-hr-icon-book-fa
+
+  - id: ss-hr-icon-color
+    title: Icon Color
+    description: Select the color from default Obsidian variables
+    type: variable-select
+    default: var(--interactive-accent)
+    options:
+      - label: Accent
+        value: var(--interactive-accent)
+      - label: Red
+        value: var(--color-red)
+      - label: Orange
+        value: var(--color-orange)
+      - label: Yellow
+        value: var(--color-yellow)
+      - label: Green
+        value: var(--color-green)
+      - label: Cyan
+        value: var(--color-cyan)
+      - label: Blue
+        value: var(--color-blue)
+      - label: Purple
+        value: var(--color-purple)
+      - label: Pink
+        value: var(--color-pink)
+      - label: Text Normal
+        value: var(--text-normal)
+      - label: Text Muted
+        value: var(--text-muted)
+
+  - id: ss-hr-icon-svg
+    title: Custom Icon Override
+    description: Insert your own SVG Data URI, e.g. url("data:image/svg+xml,...). To use the preset above, leave it as var(--hr-preset-icon)
+    type: variable-text
+    default: var(--hr-preset-icon)
+
+  - id: ss-hr-margin
+    title: Margin
+    type: variable-number-slider
+    default: 15
+    min: 15
+    max: 30
+    step: 1
+    format: px
+
+  - id: links-group
+    title: Links
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: internal-links-underline
+    title: Internal Links Underline
+    type: class-select
+    allowEmpty: false
+    default: ss-int-link-underline-hover
+    options:
+      - label: Never
+        value: ss-int-link-underline-never
+      - label: On Hover
+        value: ss-int-link-underline-hover
+      - label: Always
+        value: ss-int-link-underline-always
+
+  - id: external-links-underline
+    title: External Links Underline
+    type: class-select
+    allowEmpty: false
+    default: ss-ext-link-underline-hover
+    options:
+      - label: Never
+        value: ss-ext-link-underline-never
+      - label: On Hover
+        value: ss-ext-link-underline-hover
+      - label: Always
+        value: ss-ext-link-underline-always
+
+  - id: ss-ext-link-icons
+    title: External Link Icons
+    description: Adds a website icon before an external link
+    type: class-toggle
+    default: true
+
+  - id: ss-ext-link-arrow
+    title: Toggle External Link Icon
+    description: Inverts the visibility of the link arrow (shows it if website icons are enabled, hides it if they are disabled)
+    type: class-toggle
+    default: false
+
+  - id: tags-group
+    title: Tags
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: ss-tags-square
+    title: Square Tags
+    description: Reduce tag corner radius
+    type: class-toggle
+    default: true
+
+  - id: obsidian-group
+    title: Obsidian UI
+    type: heading
+    collapsed: true
+    level: 1
+
+  - id: ss-obsidian-colored-settings-headers
+    title: Accent Colored Settings Headers
+    description: Apply the theme accent color to section headings in settings 
+    type: class-toggle
+    default: true
+
+  - id: ss-obsidian-breadcrumb
+    title: Breadcrumb Separator 
+    description: Choose a symbol to separate folders in the title breadcrumb path
+    type: variable-select
+    default: '"•"'
+    options:
+      - label: Slash (/)
+        value: '"/"'
+      - label: Chevron (›)
+        value: '"›"'
+      - label: Double Chevron (»)
+        value: '"»"'
+      - label: Dot (•)
+        value: '"•"'
+      - label: Pipe (|)
+        value: '"|"'
+      - label: Dash (-)
+        value: '"-"'
+
+  - id: plugins-group
+    title: Integrations
+    type: heading
+    collapsed: true
+    level: 1
+
+  - id: calendar-group
+    title: Calendar
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: calendar-headers-style
+    title: Headers Style
+    type: class-select
+    allowEmpty: false
+    default: ss-calendar-headers-style-accent
+    options:
+      - label: Accent
+        value: ss-calendar-headers-style-accent
+      - label: Monochrome
+        value: ss-calendar-headers-style-monochrome
+      - label: Colorful
+        value: ss-calendar-headers-style-colorful
+*/
+
+
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Flow+Circular&display=swap');
+
+@import 'colorschemes';
+@import 'variables';
+@import 'components';
+@import 'plugins';

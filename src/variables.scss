@@ -1,0 +1,102 @@
+.theme-light, .theme-dark {
+  // Extended Colors
+  --color-red: var(--base08);
+  --color-red-rgb: var(--base08-rgb);
+  --color-orange: var(--base09);
+  --color-orange-rgb: var(--base09-rgb);
+  --color-yellow: var(--base0A);
+  --color-yellow-rgb: var(--base0A-rgb);
+  --color-green: var(--base0B);
+  --color-green-rgb: var(--base0B-rgb);
+  --color-cyan: var(--base0C);
+  --color-cyan-rgb: var(--base0C-rgb);
+  --color-blue: var(--base0D);
+  --color-blue-rgb: var(--base0D-rgb);
+  --color-purple: var(--base0E);
+  --color-purple-rgb: var(--base0E-rgb);
+  --color-pink: var(--base0F);
+  --color-pink-rgb: var(--base0F-rgb);
+
+  // Surface Colors
+  --background-primary: var(--base00);
+  --background-primary-alt: var(--base01);
+
+  --background-secondary: var(--base01);
+  --background-secondary-alt: var(--base01);
+
+  --background-modifier-hover: var(--base02);
+  --background-modifier-active-hover: var(--base02);
+
+  --background-modifier-border: var(--base02);
+  --background-modifier-border-hover: var(--base03);
+  --background-modifier-border-focus: var(--base03);
+
+  --background-modifier-error: var(--base08);
+  --background-modifier-error-hover: var(--base08);
+  --background-modifier-success: var(--base0B);
+  --background-modifier-message: var(--base01);
+
+  --background-modifier-form-field: var(--base00);
+
+  // Interactive Colors
+  --interactive-normal: var(--base00);
+  --interactive-hover: color-mix(in srgb, var(--base00), #fff 5%);
+  --interactive-accent: var(--ss-theme-accent-color, var(--base0D));
+  --interactive-accent-hover: color-mix(in srgb, var(--ss-theme-accent-color, var(--base0D)), #fff 20%);
+
+  // Text Colors
+  --text-normal: var(--base05);
+  --text-muted: var(--base04);
+  --text-faint: var(--base04);
+  --text-on-accent: var(--base01);
+  --text-on-accent-inverted: var(--base01);
+  --text-success: var(--base0B);
+  --text-warning: var(--base0A);
+  --text-error: var(--base08);
+  --text-accent: var(--interactive-accent);
+  --text-accent-hover: var(--interactive-accent-hover);
+
+  --text-selection: var(--base02);
+  --text-highlight-bg: var(--base03);
+
+  --caret-color: var(--base05);
+
+  // Typography
+  --bold-color: var(--interactive-accent);
+  --italic-color: var(--base0B);
+
+  // Checkbox
+  --checkbox-marker-color: var(--base01);
+  --checkbox-color: var(--base0B);
+  --checkbox-color-hover: color-mix(in srgb, var(--base0B), #fff 20%);
+  --checkbox-border-color: var(--base03);
+  --checkbox-border-color-hover: var(--base04);
+
+  // Modal
+  --modal-border-color: var(--base02);
+
+  // Callout
+  --callout-bug: var(--base08-rgb);
+  --callout-default: var(--base0D-rgb);
+  --callout-error: var(--base08-rgb);
+  --callout-example: var(--base0E-rgb);
+  --callout-fail: var(--base08-rgb);
+  --callout-important: var(--base0C-rgb);
+  --callout-info: var(--base0D-rgb);
+  --callout-question: var(--base0A-rgb);
+  --callout-success: var(--base0B-rgb);
+  --callout-summary: var(--base0D-rgb);
+  --callout-tip: var(--base0C-rgb);
+  --callout-todo: var(--base0C-rgb);
+  --callout-warning: var(--base0A-rgb);
+  --callout-quote: var(--base05-rgb);
+
+  // Code
+  --code-comment: var(--base04);
+
+  // Tag
+  --tag-color: var(--base01);
+  --tag-color-hover: var(--base02);
+  --tag-background: var(--interactive-accent);
+  --tag-background-hover: var(--interactive-accent-hover);
+}

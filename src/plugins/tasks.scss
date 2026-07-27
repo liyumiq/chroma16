@@ -1,0 +1,144 @@
+// Empty Tasks Block ---------------------------------------------
+.block-language-tasks:not(:has(li)) {
+  margin: 0 0 13px 0;
+  padding: 16px 8px 16px 8px;
+  border-radius: var(--radius-s);
+
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-secondary);
+}
+
+.block-language-tasks:not(:has(li)) > * {
+  display: none;
+}
+
+// Empty Block Message
+.block-language-tasks:not(:has(li))::after {
+  content: "No Tasks";
+  font-size: var(--font-text-size);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+// Tasks Margin
+.block-language-tasks {
+  margin-top: -1px;
+}
+
+
+// Task Priorities --------------------------------------------------
+.task-list-item[data-task-priority="highest"] input[type="checkbox"]:not(:checked) { border-color: var(--color-red); }
+.task-list-item[data-task-priority="highest"] input[type="checkbox"]:not(:checked):hover { border-color: color-mix(in srgb, var(--color-red), #fff 30%); }
+.task-list-item[data-task-priority="high"] input[type="checkbox"]:not(:checked) { border-color: var(--color-orange); }
+.task-list-item[data-task-priority="high"] input[type="checkbox"]:not(:checked):hover { border-color: color-mix(in srgb, var(--color-orange), #fff 30%); }
+.task-list-item[data-task-priority="medium"] input[type="checkbox"]:not(:checked) { border-color: var(--color-yellow); }
+.task-list-item[data-task-priority="medium"] input[type="checkbox"]:not(:checked):hover { border-color: color-mix(in srgb, var(--color-yellow), #fff 30%); }
+.task-list-item[data-task-priority="normal"] input[type="checkbox"]:not(:checked) { border-color: var(--color-blue); }
+.task-list-item[data-task-priority="normal"] input[type="checkbox"]:not(:checked):hover { border-color: color-mix(in srgb, var(--color-blue), #fff 30%); }
+.task-list-item[data-task-priority="low"] input[type="checkbox"]:not(:checked) { border-color: var(--color-cyan); }
+.task-list-item[data-task-priority="low"] input[type="checkbox"]:not(:checked):hover { border-color: color-mix(in srgb, var(--color-cyan), #fff 30%); }
+.task-list-item[data-task-priority="lowest"] { color: var(--text-muted); }
+.task-priority { display: none; }
+
+
+// SVG Properties ---------------------------------------------------
+// Base Styles For Properties
+:where(.task-recurring, .task-start, .task-scheduled, .task-done, .task-cancelled, .task-created, .task-due, .task-id, .task-dependsOn, .task-depends-on, .task-onCompletion, .task-on-completion, .internal-link-short-mode) {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  box-sizing: content-box;
+  padding-left: 16px; 
+  margin-left: 6px;
+  max-width: 0;
+  height: 1.2em;
+  line-height: 1.2em;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--checkbox-border-color);
+  cursor: default;
+  transition: max-width 0.25s ease;
+}
+
+:where(.task-recurring, .task-start, .task-scheduled, .task-done, .task-cancelled, .task-created, .task-due, .task-id, .task-dependsOn, .task-depends-on, .task-onCompletion, .task-on-completion, .internal-link-short-mode):hover {
+  color: var(--checkbox-border-color-hover);
+}
+
+// Hide Original Emojis
+:where(.task-recurring, .task-start, .task-scheduled, .task-done, .task-cancelled, .task-created, .task-due, .task-id, .task-dependsOn, .task-depends-on, .task-onCompletion, .task-on-completion, .internal-link-short-mode)::first-letter {
+  font-size: 0 !important;
+  color: transparent !important;
+  letter-spacing: -100px;
+}
+.task-icon { display: none !important; }
+
+// Reveal Property Text On Hover
+:where(.task-recurring, .task-start, .task-scheduled, .task-done, .task-cancelled, .task-created, .task-due, .task-id, .task-dependsOn, .task-depends-on, .task-onCompletion, .task-on-completion, .internal-link-short-mode):hover {
+  max-width: 150px;
+  opacity: 1;
+}
+
+// Positioning Custom SVG Icons
+:where(.task-recurring, .task-start, .task-scheduled, .task-done, .task-cancelled, .task-created, .task-due, .task-id, .task-dependsOn, .task-depends-on, .task-onCompletion, .task-on-completion, .internal-link-short-mode)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px; 
+  height: 13px; 
+  background-color: currentColor;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+}
+
+// Lucide SVG Mask Injection
+.task-recurring::after { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>'); }
+.task-start::after     { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.7l-1.2 3.3c-.2.5.1 1.1.6 1.3l5.6 2.3-2.6 2.6-2.5-.8c-.4-.1-.8 0-1.1.3L1 20l6.3-1.6 2.6 2.6c.3-.3.4-.7.3-1.1l-.8-2.5 2.6-2.6 2.3 5.6c.2.5.8.8 1.3.6l3.3-1.2c.5-.2.8-.6.7-1.1z"/></svg>'); }
+.task-scheduled::after { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>'); }
+.task-done::after      { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>'); }
+.task-cancelled::after { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>'); }
+.task-created::after   { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>'); }
+.task-due::after       { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>'); }
+.task-id::after        { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>'); }
+.internal-link-short-mode::after { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-link-icon lucide-link'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'/%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'/%3E%3C/svg%3E"); }
+:where(.task-dependsOn, .task-depends-on)::after { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>'); }
+:where(.task-onCompletion, .task-on-completion)::after { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>'); }
+
+// Control Buttons
+.tasks-edit, .tasks-postpone {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle; 
+  width: 13px;
+  height: 1.2em;
+  line-height: 1.2em;
+  margin-left: 6px;
+  color: var(--checkbox-border-color);
+  cursor: pointer;
+  font-size: 0 !important;
+  text-decoration: none !important;
+}
+
+.tasks-edit:hover, .tasks-postpone:hover {
+  color: var(--checkbox-border-color-hover);
+}
+
+.tasks-edit::after, .tasks-postpone::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px; 
+  height: 13px; 
+  background-color: currentColor;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+}
+
+.tasks-edit::after { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>'); }
+.tasks-postpone::after { -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 19 22 12 13 5 13 19"/><polygon points="2 19 11 12 2 5 2 19"/></svg>'); }

@@ -1,0 +1,42 @@
+// Accent Style -----------------------------------------------------
+.ss-calendar-headers-style-accent .container#calendar-container .calendar {
+  &>thead>tr:first-of-type {
+    &>th:nth-last-child(-n+7) {
+      color: var(--interactive-accent);
+    }
+  }
+}
+
+
+// Colorful Style ---------------------------------------------------
+.ss-calendar-headers-style-colorful .container#calendar-container .calendar {
+  &>thead>tr:first-of-type {
+    &>th:nth-last-child(7) {
+      color: var(--color-red);
+    }
+
+    &>th:nth-last-child(6) {
+      color: var(--color-orange);
+    }
+
+    &>th:nth-last-child(5) {
+      color: var(--color-yellow);
+    }
+
+    &>th:nth-last-child(4) {
+      color: var(--color-green);
+    }
+
+    &>th:nth-last-child(3) {
+      color: var(--color-cyan);
+    }
+
+    &>th:nth-last-child(2) {
+      color: var(--color-blue);
+    }
+
+    &>th:nth-last-child(1) {
+      color: var(--color-purple);
+    }
+  }
+}

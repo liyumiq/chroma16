@@ -1,0 +1,36 @@
+// Settings Menu Colored Headers
+.ss-obsidian-colored-settings-headers .vertical-tab-header-group-title {
+  color: var(--interactive-accent);
+}
+
+// Custom Title Bar Breadcrumbs
+.view-header-breadcrumb-separator {
+  font-size: 0px;
+}
+
+.view-header-breadcrumb-separator::after {
+  content: var(--ss-obsidian-breadcrumb, "•");
+  font-size: var(--file-header-font-size);
+}
+
+// Button
+button {
+  box-shadow: none !important;
+}
+
+// Dropdown Menu
+select.dropdown {
+  box-shadow: none;
+  border: 1px solid var(--background-modifier-border);
+  background-color: var(--background-primary);
+}
+select.dropdown:hover {
+  box-shadow: none;
+  border: 1px solid var(--background-modifier-border-hover);
+  background-color: color-mix(in srgb, var(--background-primary), #fff 5%);
+}
+
+// Message Text
+.notice-message {
+  color: var(--text-normal);
+}

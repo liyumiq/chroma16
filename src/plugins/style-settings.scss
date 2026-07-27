@@ -1,0 +1,32 @@
+// Heading
+.setting-item.setting-item-heading.style-settings-heading {
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+// Container
+.style-settings-container {
+  padding: 0 0 0 20px;
+}
+
+// Themed Color Selectors
+.themed-color-wrapper {
+  display: flex;
+  gap: 16px;
+
+}
+
+.themed-color-wrapper .theme-light,
+.themed-color-wrapper .theme-dark {
+  margin: 0;
+}
+
+.themed-color-wrapper .theme-light button,
+.themed-color-wrapper .theme-dark button {
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  color: var(--text-muted);
+}
