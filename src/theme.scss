@@ -40,6 +40,8 @@ settings:
         value: theme-dark-catppuccin-frappe
       - label: Everforest
         value: theme-dark-everforest
+      - label: Kanagawa
+        value: theme-dark-kanagawa
 
   - id: ss-theme-accent-color
     title: Accent Color
@@ -265,6 +267,18 @@ settings:
       - label: Accent
         value: var(--text-accent)
 
+  - id: codeblock-group
+    title: Codeblock
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: ss-codeblock-styling
+    title: Styling
+    description: Adds a header with the name of the programming language
+    type: class-toggle
+    default: true
+
   - id: headings-group
     title: Headings
     type: heading
@@ -401,7 +415,7 @@ settings:
         value: ss-ext-link-underline-always
 
   - id: ss-ext-link-icons
-    title: External Link Icons
+    title: Website Icons
     description: Adds a website icon before an external link
     type: class-toggle
     default: true
@@ -411,6 +425,17 @@ settings:
     description: Inverts the visibility of the link arrow (shows it if website icons are enabled, hides it if they are disabled)
     type: class-toggle
     default: false
+
+  - id: table-group
+    title: Table
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: ss-table-highlight-row
+    title: Highlight Row on Hover
+    type: class-toggle
+    default: true
 
   - id: tags-group
     title: Tags
@@ -455,6 +480,42 @@ settings:
       - label: Dash (-)
         value: '"-"'
 
+  - id: obsidian-anims-group
+    title: Animations
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: ss-obsidian-anim-general
+    title: General
+    description: Enables color transition animations for most interactive elements
+    type: class-toggle
+    default: true
+
+  - id: ss-obsidian-anim-modal
+    title: Modals
+    description: Enables pop-in and fade animations for modals, prompts, and overlays
+    type: class-toggle
+    default: true
+
+  - id: ss-obsidian-anim-settings
+    title: Settings Tabs
+    description: Enables the smooth shift animation for setting menu items on hover
+    type: class-toggle
+    default: true
+
+  - id: ss-obsidian-anim-explorer
+    title: File Explorer
+    description: Enables the smooth shift animation for fire explorer items on hover
+    type: class-toggle
+    default: true
+
+  - id: ss-obsidian-anim-links
+    title: Links
+    description: Enables smooth underline animation for links.
+    type: class-toggle
+    default: true
+
   - id: plugins-group
     title: Integrations
     type: heading
@@ -479,6 +540,48 @@ settings:
         value: ss-calendar-headers-style-monochrome
       - label: Colorful
         value: ss-calendar-headers-style-colorful
+
+  - id: dataview-group
+    title: Dataview
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: ss-dataview-empty-message
+    title: Empty Block Text
+    description: Text displayed when a Dataview query or block yields no results 
+    type: variable-text
+    default: '"No Data"'
+
+  - id: tasks-group
+    title: Tasks
+    type: heading
+    collapsed: true
+    level: 2
+
+  - id: ss-tasks-empty-message
+    title: Empty Block Text
+    description: Text displayed when a Tasks plugin query returns no tasks 
+    type: variable-text
+    default: '"No Tasks Found"'
+
+  - id: credits-group
+    title: Credits
+    type: heading
+    collapsed: true
+    level: 1
+
+  - id: credits-bunkerd
+    title: BunkerD
+    description: "[Link](https://forum.obsidian.md/t/a-callout-for-a-folder-structure/61366) — Folder structure callout"
+    type: info-text
+    markdown: true
+
+  - id: credits-sailkite
+    title: sailKite 
+    description: "[Link](https://discord.com/channels/686053708261228577/702656734631821413/1168178314318458980) — Rainbow calendar headers"
+    type: info-text
+    markdown: true
 */
 
 

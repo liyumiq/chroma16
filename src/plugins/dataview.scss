@@ -10,9 +10,9 @@
 }
 
 
-// Empty Dataview & DataviewJS Block ---------------------------------------------
-.block-language-dataview:not(:has(li)):not(:has(tbody tr)),
-.block-language-dataviewjs:not(:has(li)):not(:has(tbody tr)) {
+// Empty Dataview Block ---------------------------------------------
+.block-language-dataview:not(:has(li)):not(:has(tbody tr)):not(:has(.dv-empty-message)),
+.block-language-dataviewjs:not(:has(li)):not(:has(tbody tr)):not(:has(.dv-empty-message)) {
   margin: 0 0 13px 0;
   padding: 16px 8px 16px 8px;
   border-radius: var(--radius-s);
@@ -22,15 +22,15 @@
   background-color: var(--background-secondary);
 }
 
-.block-language-dataview:not(:has(li)):not(:has(tbody tr)) > *,
-.block-language-dataviewjs:not(:has(li)):not(:has(tbody tr)) > * {
+.block-language-dataview:not(:has(li)):not(:has(tbody tr)):not(:has(.dv-empty-message)) > *,
+.block-language-dataviewjs:not(:has(li)):not(:has(tbody tr)):not(:has(.dv-empty-message)) > * {
   display: none;
 }
 
 // Empty Block Message
-.block-language-dataview:not(:has(li)):not(:has(tbody tr))::after,
-.block-language-dataviewjs:not(:has(li)):not(:has(tbody tr))::after {
-  content: "No Data";
+.block-language-dataview:not(:has(li)):not(:has(tbody tr)):not(:has(.dv-empty-message))::after,
+.block-language-dataviewjs:not(:has(li)):not(:has(tbody tr)):not(:has(.dv-empty-message))::after {
+  content: var(--ss-dataview-empty-message, "No Data");
   font-size: var(--font-text-size);
   font-style: italic;
   color: var(--text-muted);
@@ -50,3 +50,6 @@
   color: var(--text-muted);
   background-color: var(--background-secondary);
 }
+
+
+

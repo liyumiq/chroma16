@@ -1,18 +1,4 @@
-// Settings Menu Colored Headers
-.ss-obsidian-colored-settings-headers .vertical-tab-header-group-title {
-  color: var(--interactive-accent);
-}
-
-// Custom Title Bar Breadcrumbs
-.view-header-breadcrumb-separator {
-  font-size: 0px;
-}
-
-.view-header-breadcrumb-separator::after {
-  content: var(--ss-obsidian-breadcrumb, "•");
-  font-size: var(--file-header-font-size);
-}
-
+// UI Elements ------------------------------------------------------
 // Button
 button {
   box-shadow: none !important;
@@ -33,4 +19,53 @@ select.dropdown:hover {
 // Message Text
 .notice-message {
   color: var(--text-normal);
+}
+
+// Icon Colors
+.clickable-icon:hover svg,
+.workspace-tab-header-inner:hover svg,
+.workspace-drawer-vault-switcher:hover svg,
+.status-bar-item:hover svg,
+.workspace-tab-header-inner:hover .workspace-tab-header-inner-title,
+.metadata-add-button:hover svg {
+  color: var(--text-normal);
+}
+
+
+// File Explorer ----------------------------------------------------
+.nav-folder-title:hover svg,
+.nav-file-title:hover svg,
+.nav-file-title.is-active svg {
+  color: var(--text-normal) !important;
+}
+
+
+// Tabs -------------------------------------------------------------
+.workspace-tab-header:hover,
+.workspace-tab-header-inner:hover {
+  .workspace-tab-header-inner svg,
+  .workspace-tab-header-inner-title,
+  .workspace-tab-header-inner-close-button,
+  .workspace-tab-header-inner-icon {
+    color: var(--text-normal);
+    opacity: 1;
+  }
+}
+
+
+// Custom Breadcrumbs -----------------------------------------------
+.view-header-breadcrumb-separator {
+  font-size: 0px;
+}
+
+.view-header-breadcrumb-separator::after {
+  content: var(--ss-obsidian-breadcrumb, "•");
+  font-size: var(--file-header-font-size);
+}
+
+
+// Settings Menu ----------------------------------------------------
+// Accent Colored Headers
+.ss-obsidian-colored-settings-headers .vertical-tab-header-group-title {
+  color: var(--interactive-accent);
 }

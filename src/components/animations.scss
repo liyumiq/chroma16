@@ -1,0 +1,160 @@
+// Universal --------------------------------------------------------
+.ss-obsidian-anim-general {
+  button,
+  a,
+  input,
+  select.dropdown,
+  .multi-select-pill,
+  .internal-link,
+  .external-link,
+  .clickable-icon,
+  .clickable-icon svg,
+  .nav-file-title svg,
+  .nav-folder-title svg,
+  .vertical-tab-nav-item,
+  .vertical-tab-nav-item svg,
+  .workspace-tab-header-inner,
+  .workspace-tab-header-inner svg,
+  .workspace-tab-header-inner-title,
+  .workspace-tab-header-inner-icon,
+  .workspace-drawer-vault-switcher,
+  .workspace-drawer-vault-switcher svg,
+  .tree-item-self,
+  .status-bar-item,
+  .status-bar-item svg,
+  .view-header-breadcrumb,
+  .metadata-add-button,
+  .metadata-add-button svg,
+  .tag,
+  .menu-item {
+    --anim-speed: 0.2s;
+    transition: background-color var(--anim-speed) ease-in-out, 
+                color var(--anim-speed) ease-in-out, 
+                border-color var(--anim-speed) ease-in-out,
+                opacity var(--anim-speed) ease-in-out;
+  }
+}
+
+
+// Modals -----------------------------------------------------------
+.ss-obsidian-anim-modal {
+  @keyframes modal-scale-in {
+      0% {
+          opacity: 0;
+          transform: scale(0.95);
+      }
+      100% {
+          opacity: 1;
+          transform: scale(1);
+      }
+  }
+
+  @keyframes modal-fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+  }
+
+  // Modal
+  .modal, 
+  .prompt {
+      animation: modal-scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  // Background
+  .modal-bg {
+      animation: modal-fade-in 0.2s ease-out forwards;
+  }
+}
+
+
+// Settings Tabs ----------------------------------------------------
+.ss-obsidian-anim-settings {
+  .vertical-tab-nav-item > * {
+      transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .vertical-tab-nav-item:hover > * {
+      transform: translateX(10px);
+  }
+  .vertical-tab-nav-item.is-active > * {
+      transform: translateX(10px);
+  }
+}
+
+
+// File Explorer ----------------------------------------------------
+.ss-obsidian-anim-explorer {
+  .nav-folder-title > *,
+  .nav-file-title > * {
+      transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .nav-folder-title:hover > *,
+  .nav-file-title:hover > * {
+      transform: translateX(10px);
+  }
+  .nav-folder-title.is-active > *,
+  .nav-file-title.is-active > * {
+      transform: translateX(10px);
+  }
+}
+
+
+// Links Underline Animation ----------------------------------------
+body.ss-obsidian-anim-links {
+  .internal-link,
+  .external-link {
+    // Disable Default Underline
+    text-decoration: none !important;
+    --link-decoration: none !important;
+    --link-decoration-hover: none !important;
+    --link-external-decoration: none !important;
+    --link-external-decoration-hover: none !important;
+
+    // Draw Underline
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    
+    // Transitions
+    transition: background-color var(--anim-speed) ease-in-out, 
+                color var(--anim-speed) ease-in-out, 
+                background-size var(--anim-speed) ease-in-out;
+  }
+
+  // Internal Links
+  .internal-link {
+    background-position: 0% 100%;
+  }
+  
+  &.ss-int-link-underline-always .internal-link {
+    background-size: 100% 1px;
+  }
+  &.ss-int-link-underline-hover .internal-link:hover {
+    background-size: 100% 1px;
+  }
+
+  // External Links
+  .external-link {
+    --ext-icon-left: 0px;
+    --ext-icon-right: calc(1em + 4px); 
+    
+    background-position: var(--ext-icon-left) 100%;
+  }
+
+  &.ss-ext-link-underline-always .external-link {
+    background-size: calc(100% - var(--ext-icon-left) - var(--ext-icon-right)) 1px;
+  }
+  &.ss-ext-link-underline-hover .external-link:hover {
+    background-size: calc(100% - var(--ext-icon-left) - var(--ext-icon-right)) 1px;
+  }
+
+  // States
+  &.ss-ext-link-icons .external-link {
+    --ext-icon-left: 18px;
+    background-position: var(--ext-icon-left) 100%;
+  }
+
+  &.ss-ext-link-icons:not(.ss-ext-link-arrow) .external-link,
+  &:not(.ss-ext-link-icons).ss-ext-link-arrow .external-link {
+    --ext-icon-right: 0px;
+  }
+}

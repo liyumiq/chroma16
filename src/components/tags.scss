@@ -1,24 +1,42 @@
-// Colored Tags
+// Colored Tags -----------------------------------------------------
 $theme-tags: (
-  "important": var(--color-red),
-  "todo": var(--color-blue),
-  "bug": var(--color-orange),
-  "idea": var(--color-green)
+  "in-progress": var(--color-yellow),
+  "progress": var(--color-yellow),
+  "done": var(--color-green),
+  "completed": var(--color-green),
+  "canceled": var(--color-red),
+
+  "idea": var(--color-orange),
 );
 
 
-// Base Styling
+// Base Styling -----------------------------------------------------
+// Colors
+a.tag,
+.cm-s-obsidian .cm-hashtag {
+  --tag-custom-color: var(--interactive-accent);
+
+  color: var(--tag-custom-color) !important;
+  background-color: color-mix(in srgb, var(--tag-custom-color) 10%, transparent);
+}
+a.tag:hover,
+.cm-s-obsidian .cm-hashtag:hover {
+  background-color: color-mix(in srgb, var(--tag-custom-color) 20%, transparent);
+}
+
+// Padding
 a.tag {
   padding: 4px 8px 2.5px 8px;
 }
-
 .cm-hashtag {
-  color: var(--text-on-accent) !important;
   padding: 2px 7px 2px 0;
+}
+.cm-hashtag-begin {
+  padding-right: 1px;
 }
 
 
-// Square Tags
+// Square Tags ------------------------------------------------------
 .ss-tags-square {
   a.tag,
   .metadata-property[data-property-key="tags"] .multi-select-pill {
@@ -34,12 +52,10 @@ a.tag {
 }
 
 
-// Colored Tags Logic
-@each $name, $bg-color in $theme-tags {
-  body a.tag[href*="##{$name}" i],
-  .cm-s-obsidian [class*="cm-tag-#{$name}" i],
-  .cm-s-obsidian .cm-hashtag-begin:has(+ [class*="cm-tag-#{$name}" i]) {
-      background-color: $bg-color !important;
+// Colored Tags Logic -----------------------------------------------
+@each $name, $color in $theme-tags {
+  body a.tag[href$="#{$name}" i],
+  .cm-s-obsidian .cm-hashtag[class$="#{$name}" i] {
+    --tag-custom-color: #{$color};
   }
 }
-

@@ -6,6 +6,10 @@
 @mixin generate-scheme($theme-name, $mode, $colors-map, $is-default: false) {
   $selector: "body.theme-#{$mode}-#{$theme-name}.theme-#{$mode}";
   
+  @if $is-default {
+    $selector: "#{$selector}, body.theme-#{$mode}";
+  }
+
   #{$selector} {
     @each $key, $color in $colors-map {
       --#{$key}: #{$color};
@@ -22,7 +26,7 @@
     @if $text-color { color: #{$text-color}; }
     @if $text-decor { text-decoration: #{$text-decor}; }
 
-    input[type="checkbox"] {
+    > input[type="checkbox"] {
       
       background-image: none !important;
 

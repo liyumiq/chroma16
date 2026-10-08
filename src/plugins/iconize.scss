@@ -1,0 +1,5 @@
+.cm-header svg:not(.cm-fold-indicator svg),
+.markdown-rendered :is(h1, h2, h3, h4, h5, h6) svg:not(.collapse-indicator svg) {
+    width: 1em !important;
+    height: 1em !important;
+}

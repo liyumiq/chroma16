@@ -15,7 +15,7 @@
 
 // Empty Block Message
 .block-language-tasks:not(:has(li))::after {
-  content: "No Tasks";
+  content: var(--ss-tasks-empty-message, "No Tasks Found");
   font-size: var(--font-text-size);
   font-style: italic;
   color: var(--text-muted);
@@ -24,6 +24,10 @@
 // Tasks Margin
 .block-language-tasks {
   margin-top: -1px;
+}
+.callout .plugin-tasks-query-result {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 

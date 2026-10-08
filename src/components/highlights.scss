@@ -1,12 +1,4 @@
-mark.red { --color: var(--color-red); }
-mark.orange { --color: var(--color-orange); }
-mark.yellow { --color: var(--color-yellow); }
-mark.green { --color: var(--color-green); }
-mark.cyan { --color: var(--color-cyan); }
-mark.blue { --color: var(--color-blue); }
-mark.purple { --color: var(--color-purple); }
-mark.pink { --color: var(--color-pink); }
-
+// Base Styling
 span.cm-highlight,
 span.cm-formatting-highlight,
 .markdown-preview-view mark,
@@ -17,3 +9,13 @@ span.cm-formatting-highlight,
   color: var(--text-on-accent);
   background-color: var(--color, var(--interactive-accent));
 }
+
+// Colors
+mark.red { --color: var(--color-red); }
+mark.orange { --color: var(--color-orange); }
+mark.yellow { --color: var(--color-yellow); }
+mark.green { --color: var(--color-green); }
+mark.cyan { --color: var(--color-cyan); }
+mark.blue { --color: var(--color-blue); }
+mark.purple { --color: var(--color-purple); }
+mark.pink { --color: var(--color-pink); }

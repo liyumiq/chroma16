@@ -95,8 +95,8 @@
   --code-comment: var(--base04);
 
   // Tag
-  --tag-color: var(--base01);
-  --tag-color-hover: var(--base02);
-  --tag-background: var(--interactive-accent);
-  --tag-background-hover: var(--interactive-accent-hover);
+  --tag-color: var(--interactive-accent);
+  --tag-color-hover: var(--interactive-accent);
+  --tag-background: color-mix(in srgb, var(--interactive-accent) 10%, transparent);
+  --tag-background-hover: color-mix(in srgb, var(--interactive-accent) 20%, transparent);
 }

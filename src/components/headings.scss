@@ -8,6 +8,7 @@
   --h5-color: var(--interactive-accent);
   --h6-color: var(--interactive-accent);
 }
+
 .ss-headings-style-colorful {
   --h1-color: var(--color-red);
   --h2-color: var(--color-orange);
@@ -16,7 +17,6 @@
   --h5-color: var(--color-cyan);
   --h6-color: var(--color-blue);
 }
-
 
 .ss-headings-style-border {
   // Left Margin
@@ -53,4 +53,12 @@
   .markdown-preview-view h4::before, .cm-line.HyperMD-header-4::before { background-color: var(--color-green); }
   .markdown-preview-view h5::before, .cm-line.HyperMD-header-5::before { background-color: var(--color-cyan); }
   .markdown-preview-view h6::before, .cm-line.HyperMD-header-6::before { background-color: var(--color-blue); }
+
+  // Move Fold
+  .markdown-preview-view .heading-collapse-indicator {
+    left: -6px;
+  }
+  .cm-fold-indicator {
+    transform: translateX(-19px);
+  }
 }

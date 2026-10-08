@@ -14,7 +14,7 @@
 .markdown-rendered table td,
 .markdown-rendered table th.table-view-th,
 .markdown-rendered table td.table-view-td {
-  padding: 8px;
+  padding: 8px 8px 8px 12px;
   border: none;
   font-size: var(--font-text-size);
 }
@@ -24,8 +24,7 @@
 .markdown-rendered table thead td,
 .markdown-rendered table tr:has(.tag[href="#hdr"]) td {
   font-weight: 600;
-  color: var(--interactive-accent);
-  background-color: color-mix(in srgb, var(--interactive-accent) 10%, transparent) !important;
+  background-color: var(--background-modifier-hover) !important;
 }
 
 // Rows
@@ -33,14 +32,12 @@
   background-color: var(--background-secondary) !important;
 }
 
-// Header-like Row
-.markdown-rendered table tbody tr:first-child:has(.tag[href="#hdr"]) td,
-.markdown-rendered table tr:has(.tag[href="#hdr"]) + tr:has(.tag[href="#hdr"]) td {
-  border-top: none !important;
+// Highlight Row on Hover
+.theme-light.ss-table-highlight-row .markdown-rendered table tbody tr:not(:has(.tag[href="#hdr"])):hover td {
+  background-color: color-mix(in srgb, var(--background-secondary), #000 3%) !important;
 }
-
-.markdown-rendered table tr:last-child:has(.tag[href="#hdr"]) td {
-  border-bottom: none !important;
+.theme-dark.ss-table-highlight-row .markdown-rendered table tbody tr:not(:has(.tag[href="#hdr"])):hover td {
+  background-color: color-mix(in srgb, var(--background-secondary), #fff 2%) !important;
 }
 
 // Inline Code

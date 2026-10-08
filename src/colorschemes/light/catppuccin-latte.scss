@@ -7,4 +7,4 @@ $catppuccin-latte: (
   base0C: #179299, base0D: #1e66f5, base0E: #8839ef, base0F: #dd7878
 );
 
-@include generate-scheme('catppuccin-latte', 'light', $catppuccin-latte);
+@include generate-scheme('catppuccin-latte', 'light', $catppuccin-latte, true);

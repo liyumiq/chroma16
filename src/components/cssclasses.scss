@@ -2,3 +2,9 @@
 .wide-page .markdown-preview-section {
 	max-width: 100% !important;
 }
+
+// Dashboard
+.chroma-dashboard {
+  .inline-title { display: none !important; }
+  .metadata-container { display: none !important }
+}

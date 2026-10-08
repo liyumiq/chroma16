@@ -1,67 +1,84 @@
-// Styling ----------------------------------------------------------
-// Display Language
-.markdown-rendered pre[class*="language-"]::before {
-  content: "CODE";
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-
-// Hide Label On Hover
-.markdown-rendered pre[class*="language-"]:hover::before {
-  display: none;
-}
-
 // Languages --------------------------------------------------------
-.markdown-rendered pre[class~="language-js"]::before,
-.markdown-rendered pre[class~="language-javascript"]::before { content: "JS"; }
+$code-languages: (
+  "js": "JavaScript",
+  "javascript": "JavaScript",
+  "ts": "TypeScript",
+  "typescript": "TypeScript",
+  "py": "Python",
+  "python": "Python",
+  "html": "HTML",
+  "css": "CSS",
+  "scss": "SCSS",
+  "json": "JSON",
+  "cpp": "C++",
+  "c": "C",
+  "cs": "C#",
+  "csharp": "C#",
+  "java": "Java",
+  "bash": "Bash",
+  "sh": "Bash",
+  "md": "Markdown",
+  "go": "Go",
+  "rust": "Rust",
+  "sql": "SQL",
+  "php": "PHP",
+  "nix": "NIX"
+);
 
-.markdown-rendered pre[class~="language-ts"]::before,
-.markdown-rendered pre[class~="language-typescript"]::before { content: "TS"; }
 
-.markdown-rendered pre[class~="language-py"]::before,
-.markdown-rendered pre[class~="language-python"]::before { content: "Python"; }
+// Codeblock --------------------------------------------------------
+.ss-codeblock-styling {
+  // Block Size
+  .markdown-rendered pre[class*="language-"] {
+    --code-header-height: 32px;
 
-.markdown-rendered pre[class~="language-html"]::before { content: "HTML"; }
+    position: relative;
+    padding-top: calc(var(--code-header-height) + 11px) !important;
+  }
 
-.markdown-rendered pre[class~="language-css"]::before { content: "CSS"; }
+  // Language Name
+  .markdown-rendered pre[class*="language-"]::before {
+    content: attr(class);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--code-header-height);
+    
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    
+    font-size: var(--font-small);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    
+    border-bottom: 1px solid var(--background-modifier-border);
+  }
 
-.markdown-rendered pre[class~="language-scss"]::before { content: "SCSS"; }
+  // Copy Button
+  .markdown-rendered pre[class*="language-"] .copy-code-button {
+    position: absolute;
+    width: var(--code-header-height);
+    height: var(--code-header-height);
 
-.markdown-rendered pre[class~="language-json"]::before { content: "JSON"; }
+    margin: 0;
+    padding: 6px !important;
+    
+    background: transparent;
+    box-shadow: none;
 
-.markdown-rendered pre[class~="language-json5"]::before { content: "JSON5"; }
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
 
-.markdown-rendered pre[class~="language-bash"]::before,
-.markdown-rendered pre[class~="language-sh"]::before { content: "Bash"; }
-
-.markdown-rendered pre[class~="language-cpp"]::before { content: "C++"; }
-
-.markdown-rendered pre[class~="language-c"]::before { content: "C"; }
-
-.markdown-rendered pre[class~="language-cs"]::before,
-.markdown-rendered pre[class~="language-csharp"]::before { content: "C#"; }
-
-.markdown-rendered pre[class~="language-java"]::before { content: "Java"; }
-
-.markdown-rendered pre[class~="language-go"]::before { content: "Go"; }
-
-.markdown-rendered pre[class~="language-rust"]::before,
-.markdown-rendered pre[class~="language-rs"]::before { content: "Rust"; }
-
-.markdown-rendered pre[class~="language-php"]::before { content: "PHP"; }
-
-.markdown-rendered pre[class~="language-sql"]::before { content: "SQL"; }
-
-.markdown-rendered pre[class~="language-yaml"]::before,
-.markdown-rendered pre[class~="language-yml"]::before { content: "YAML"; }
-
-.markdown-rendered pre[class~="language-md"]::before,
-.markdown-rendered pre[class~="language-markdown"]::before { content: "Markdown"; }
-
-.markdown-rendered pre[class~="language-nix"]::before { content: "nix"; }
+  // Language Name Logic
+  @each $ext, $name in $code-languages {
+    .markdown-rendered pre.language-#{$ext}::before {
+      content: "#{$name}";
+    }
+  }
+}
